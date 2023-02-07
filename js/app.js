@@ -4,8 +4,16 @@ let submitBtn = document.getElementById('submitBtn')
 let searchHistory = document.getElementById('searchHistory')
 let clearHistoryBtn = document.getElementById('clearHistory')
 let qr = new QRCode(qrContainer) //initialize qrcode.js library
-
 let searchHistoryArray = (localStorage.searchHistoryArray) ? JSON.parse(localStorage.searchHistoryArray) : []
+
+const list = document.querySelector('ol')
+    list.addEventListener('click', (e) => {
+        if (e.target.tagName === "BUTTON"){
+            input.value = e.target.textContent;
+            submitBtn.disabled = false;
+            submitBtn.click()
+        }
+    })
 
 // const clearHistory = () => {
 //     searchHistoryArray = []
@@ -46,10 +54,16 @@ const historyText = () => {
     }
 
     localStorage.searchHistoryArray = JSON.stringify(searchHistoryArray)
+
     searchHistory.innerHTML = ""
-    searchHistoryArray.slice(-7).forEach((search) => {
-        searchHistory.innerHTML = `<p>QR code history</p><li>${searchHistory.innerHTML}</li>`
-        searchHistory.querySelector('li').innerText = search
+    searchHistoryArray.slice(-7).reverse().forEach((search, index) => {
+        let li = document.createElement('li')
+        let button = document.createElement('button')
+        li.id = `${index + 1}`
+        button.innerHTML = search
+        button.classList = 'btn btn-dark'
+        button.style.cursor = "pointer"
+        searchHistory.appendChild(li)
+        li.appendChild(button)
     })
 }
-

@@ -8,9 +8,7 @@ canvas{
     display: none;
 }
 
-.container{
-    /* display: grid;
-    place-items: center; */
+body{
     height: 100vh;
 }
 
@@ -18,4 +16,17 @@ canvas{
     width: 15em;
     display: flex;
     flex-direction: column;
+}
+
+.searchHistory{
+    padding: 0;
+}
+
+.searchHistoryContainer button{
+    max-width: 15em;
+    margin: .1em 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 20px;
 }
