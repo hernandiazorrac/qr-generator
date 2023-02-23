@@ -49,10 +49,10 @@ input.addEventListener('keypress', (e) => {
 
 
 const historyText = () => {
-    if(input.value.length != 0){ //prevents adding an empty string to history array when loading DOM
+    if(input.value.length != 0 && !searchHistoryArray.slice(-7).includes(input.value) ){ //prevents adding an empty string to history array when loading DOM
         searchHistoryArray.push(input.value)
     }
-
+    
     localStorage.searchHistoryArray = JSON.stringify(searchHistoryArray)
 
     searchHistory.innerHTML = ""
