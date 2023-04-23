@@ -1,49 +1,64 @@
-*{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-canvas{
-    display: none;
+canvas {
+  display: none;
 }
 
-body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.appContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+img {
+  border: 1.5em solid rgb(255, 255, 255);
 }
 
-.qrContainer{
-    width: 15em;
-    display: flex;
-    flex-direction: column;
+.appContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-#submitBtn{
-    margin: 1em 0;
+.input {
+  border-radius: 50px;
+  padding: 0.6em;
 }
 
-.searchHistory{
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-width: 13em;
-    margin-left: 1em;
+.buttonsContainer {
+  display: flex;
+  gap: 1em;
 }
 
-.searchHistoryContainer button{
-    max-width: 13em;
-    margin: .1em 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-radius: 10px;
+#submitBtn,
+#clearHistory {
+  margin: 1em 0;
+  border-radius: 50px;
+}
+
+.qrContainer {
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchHistory {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 13em;
+  margin-left: 1em;
+}
+
+.historyButton {
+  max-width: 13em;
+  margin: 0.1em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 50px;
 }

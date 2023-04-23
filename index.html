@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>QR Code generator</title>
 </head>
+
 <body onload="historyText()" class="bg-dark">
     <div class="appContainer">
     <div class="qrContainer" id="qrContainer">
-        <input type="text" id="input" placeholder="Your URL or text goes here">
-        <button type="submit" class="btn btn-warning" id="submitBtn" disabled>Create QR code</button>
+        <input type="text" id="input" placeholder="Your URL or text goes here" class="input">
+        <div class="buttonsContainer">
+            <button type="submit" class="btn btn-warning" id="submitBtn" disabled>Create QR code</button>
+            <button class="clearHistory btn btn-info" id="clearHistory" onclick="clearHistory()">Clear search history</button>
+        </div> 
     </div>
     <div class="searchHistoryContainer">
         <ol class="searchHistory" id="searchHistory"></ol>
-        <!-- <button class="clearHistory" id="clearHistory" onclick="clearHistory()">Pija</button> -->
     </div>
 </div>
 
